@@ -30,7 +30,7 @@ const RiskMeter = ({ level = 'medium', showLabel = true }) => {
   return (
     <div>
       {/* Zone labels */}
-      <div className="flex justify-between text-xs mb-2.5 font-semibold">
+      <div className="grid grid-cols-4 text-xs mb-2.5 font-semibold text-center">
         {LEVELS.map((l) => (
           <span
             key={l}
@@ -60,21 +60,19 @@ const RiskMeter = ({ level = 'medium', showLabel = true }) => {
       </div>
 
       {/* Zone markers */}
-      <div className="flex justify-between mt-1.5 px-0">
+      <div className="grid grid-cols-4 mt-1.5 text-center">
         {LEVELS.map((l, i) => (
-          <motion.div
-            key={l}
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2 + i * 0.08, type: 'spring', stiffness: 300 }}
-            className="w-2 h-2 rounded-full"
-            style={{
-              background: i <= safeIdx ? barColor : 'var(--color-border)',
-              // space evenly
-              marginLeft: i === 0 ? '0' : 'auto',
-              marginRight: i === LEVELS.length - 1 ? '0' : 'auto',
-            }}
-          />
+          <div key={l} className="flex justify-center">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2 + i * 0.08, type: 'spring', stiffness: 300 }}
+              className="w-2 h-2 rounded-full"
+              style={{
+                background: i <= safeIdx ? barColor : 'var(--color-border)',
+              }}
+            />
+          </div>
         ))}
       </div>
 
