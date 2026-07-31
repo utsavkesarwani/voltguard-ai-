@@ -14,7 +14,7 @@ const analyzeImage = asyncHandler(async (req, res) => {
 
   const imagePath = req.file.filename;
 
-  // TODO: Replace mock analyzeImage with Gemini Vision call in Phase 5
+  // Analyze image with Gemini Vision AI
   const analysisData = await reportService.analyzeImage(imagePath);
   const report = await reportService.saveReport(imagePath, analysisData);
 

@@ -1,32 +1,12 @@
 const Report = require('../models/Report');
-
-const MOCK_REPORT = {
-  faultName: 'Overloaded Circuit Breaker',
-  confidence: 87,
-  riskLevel: 'medium',
-  healthScore: 62,
-  possibleCause:
-    'Multiple high-load appliances on the same circuit are drawing more current than the breaker is rated for (15A). Visible heat discoloration on the breaker panel indicates prolonged overload.',
-  recommendation:
-    'Immediately reduce the load on this circuit by redistributing appliances. Have a licensed electrician inspect the panel and consider upgrading to a 20A circuit or adding a dedicated circuit for high-load devices.',
-  estimatedCost: '$150 – $400 (circuit upgrade)',
-  safetyTips: [
-    'Do not reset a tripped breaker repeatedly — it signals a real overload.',
-    'Unplug high-wattage devices (space heaters, microwaves) from this circuit.',
-    'Never replace a breaker with a higher-rated one without professional assessment.',
-    'Keep the breaker panel area clear of obstructions.',
-  ],
-};
+const { analyzeWithGemini } = require('./geminiService');
 
 /**
- * Analyze an uploaded electrical image and return fault analysis.
- * TODO: Replace mock response with Gemini Vision call in Phase 5.
+ * Analyze an uploaded electrical image using Gemini Vision AI.
+ * Returns fault analysis in camelCase Report schema shape.
  */
 const analyzeImage = async (imagePath) => {
-  // Simulate processing delay
-  await new Promise((resolve) => setTimeout(resolve, 500));
-
-  return { ...MOCK_REPORT };
+  return await analyzeWithGemini(imagePath);
 };
 
 /**
