@@ -1,0 +1,11 @@
+{
+  "name": "voltguard-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VoltGuard AI — AI-powered electrical fault detection SaaS platform",
+  "scripts": {
+    "dev": "concurrently --names \"CLIENT,SERVER\" --prefix-colors \"blue,green\" \"npm --prefix client run dev\" \"npm --prefix server run dev\"",
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "npm --prefix server run dev",
+    "build": "npm --prefix client run build",
+   
