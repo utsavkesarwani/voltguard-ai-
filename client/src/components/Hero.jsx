@@ -130,7 +130,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Text Content */}
           <div>
@@ -200,7 +200,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-8"
+              className="flex flex-wrap gap-6"
             >
               {stats.map(({ icon: Icon, value, label }) => (
                 <div key={label} className="flex items-center gap-3">

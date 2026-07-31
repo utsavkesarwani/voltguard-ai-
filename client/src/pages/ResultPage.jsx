@@ -34,14 +34,14 @@ const ResultPage = () => {
   const report = MOCK_REPORT;
 
   return (
-    <div className="min-h-screen py-10 px-4" style={{ background: 'var(--color-bg)' }}>
+    <div className="min-h-screen py-12 px-4" style={{ background: 'var(--color-bg)' }}>
       <div className="max-w-2xl mx-auto">
         {/* Back Button */}
         <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onClick={() => navigate('/detect')}
-          className="flex items-center gap-2 mb-6 text-sm font-medium group"
+          className="flex items-center gap-2 mb-8 text-sm font-medium group"
           style={{ color: 'var(--color-text)', background: 'none', border: 'none', cursor: 'pointer' }}
           id="back-to-detect"
         >
@@ -57,7 +57,7 @@ const ResultPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="card p-6 mb-5 mt-5"
+          className="card p-6 mb-6 mt-6"
           style={{ borderRadius: '24px' }}
         >
           <p

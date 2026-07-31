@@ -16,7 +16,7 @@ import Badge from '../components/Badge';
 const Section = ({ children, id, className = '', style = {} }) => (
   <section
     id={id}
-    className={`py-20 lg:py-28 ${className}`}
+    className={`py-20 lg:py-24 ${className}`}
     style={style}
   >
     <div className="max-w-7xl mx-auto px-6 lg:px-8">{children}</div>
@@ -25,7 +25,7 @@ const Section = ({ children, id, className = '', style = {} }) => (
 
 // ── Section header
 const SectionHeader = ({ label, title, subtitle, center = true }) => (
-  <div className={`mb-14 ${center ? 'text-center' : ''}`}>
+  <div className={`mb-12 ${center ? 'text-center' : ''}`}>
     {label && (
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -52,12 +52,12 @@ const SectionHeader = ({ label, title, subtitle, center = true }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="mt-4 text-lg"
         style={{
           color: 'var(--color-text)',
           maxWidth: center ? '560px' : undefined,
           margin: center ? '16px auto 0' : '16px 0 0',
           lineHeight: 1.7,
+          fontSize: '1.0625rem',
         }}
       >
         {subtitle}
@@ -213,32 +213,34 @@ const LandingPage = () => {
       <Hero />
 
       {/* Trusted By */}
-      <Section style={{ background: 'var(--color-surface)', padding: '48px 0' }}>
-        <div className="text-center mb-8">
-          <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--color-text-light)' }}>
-            Trusted by homeowners and professionals at
-          </p>
+      <div style={{ background: 'var(--color-surface)', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+          <div className="text-center mb-6">
+            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--color-text-light)' }}>
+              Trusted by homeowners and professionals at
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14">
+            {trustedBrands.map((brand, i) => (
+              <motion.span
+                key={brand}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="font-bold text-base"
+                style={{
+                  color: 'var(--color-text-muted)',
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                {brand}
+              </motion.span>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
-          {trustedBrands.map((brand, i) => (
-            <motion.span
-              key={brand}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="font-bold text-base"
-              style={{
-                color: 'var(--color-text-muted)',
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                letterSpacing: '-0.02em',
-              }}
-            >
-              {brand}
-            </motion.span>
-          ))}
-        </div>
-      </Section>
+      </div>
 
       {/* Features */}
       <Section id="features" style={{ background: 'var(--color-bg)' }}>
@@ -247,7 +249,7 @@ const LandingPage = () => {
           title="Everything You Need to Stay Safe"
           subtitle="From image upload to actionable report — VoltGuard AI covers the full electrical safety workflow."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
           {features.map((feature, index) => (
             <FeatureCard key={feature.title} {...feature} index={index} />
           ))}
@@ -269,13 +271,13 @@ const LandingPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-14"
+          className="text-center mt-12"
         >
           <Link to="/detect" className="btn btn-primary btn-lg" id="hiw-cta">
             Try It Now — Free
             <ArrowRight className="w-5 h-5" />
           </Link>
-          <p className="mt-3 text-sm" style={{ color: 'var(--color-text-light)' }}>
+          <p className="mt-4 text-sm" style={{ color: 'var(--color-text-light)' }}>
             No sign-up required. Upload a photo and get your report instantly.
           </p>
         </motion.div>
@@ -283,7 +285,7 @@ const LandingPage = () => {
 
       {/* Why VoltGuard AI */}
       <Section id="why-voltguard" style={{ background: 'var(--color-bg)' }}>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <SectionHeader
               label="🏆 Why VoltGuard AI"
@@ -302,12 +304,12 @@ const LandingPage = () => {
                   className="card p-5"
                 >
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
                     style={{ background: 'var(--color-primary-light)', border: '1px solid rgba(37,99,235,0.15)' }}
                   >
                     <item.icon className="w-5 h-5" style={{ color: 'var(--color-primary)' }} />
                   </div>
-                  <h4 className="font-semibold text-sm mb-1" style={{ color: 'var(--color-heading)' }}>
+                  <h4 className="font-semibold text-sm mb-2" style={{ color: 'var(--color-heading)' }}>
                     {item.title}
                   </h4>
                   <p className="text-xs leading-relaxed" style={{ color: 'var(--color-text)' }}>
@@ -368,15 +370,12 @@ const LandingPage = () => {
       </Section>
 
       {/* AI Technology */}
-      <Section
+      <section
         id="ai-technology"
-        style={{
-          background: 'var(--gradient-electric)',
-          padding: '80px 0',
-        }}
+        style={{ background: 'var(--gradient-electric)' }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <motion.span
                 initial={{ opacity: 0 }}
@@ -462,7 +461,7 @@ const LandingPage = () => {
             </motion.div>
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Benefits */}
       <Section style={{ background: 'var(--color-surface)' }}>
@@ -471,7 +470,7 @@ const LandingPage = () => {
           title="Why Thousands of Homeowners Choose VoltGuard AI"
           subtitle="More than just fault detection — a complete electrical safety companion."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -479,7 +478,7 @@ const LandingPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.06 }}
-              className="flex items-center gap-4 p-5 rounded-2xl h-full"
+              className="flex items-center gap-4 p-5 rounded-2xl"
               style={{
                 background: 'var(--color-bg)',
                 border: '1px solid var(--color-border)',
@@ -507,7 +506,7 @@ const LandingPage = () => {
       </Section>
 
       {/* Final CTA Banner */}
-      <Section style={{ background: 'var(--color-surface)', padding: '80px 0' }}>
+      <Section style={{ background: 'var(--color-surface)' }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -533,10 +532,18 @@ const LandingPage = () => {
               <Zap className="w-3.5 h-3.5" />
               Start for Free — No Sign-up Required
             </Badge>
-            <h2 className="mb-4" style={{ color: 'var(--color-heading)' }}>
+            <h2 className="mt-0 mb-4" style={{ color: 'var(--color-heading)' }}>
               Ready to Protect Your Home?
             </h2>
-            <p className="text-lg mb-8" style={{ color: 'var(--color-text)', maxWidth: '480px', margin: '16px auto 32px' }}>
+            <p
+              style={{
+                color: 'var(--color-text)',
+                maxWidth: '480px',
+                margin: '12px auto 28px',
+                fontSize: '1.0625rem',
+                lineHeight: 1.7,
+              }}
+            >
               Upload your first electrical image and get a complete AI-powered safety report in seconds.
             </p>
             <Link to="/detect" className="btn btn-primary btn-lg" id="final-cta">

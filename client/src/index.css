@@ -57,6 +57,25 @@
   --blur-sm: 8px;
   --blur-md: 16px;
   --blur-lg: 24px;
+
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Section Spacing */
+  --section-pad-y: 80px;
+  --section-pad-y-lg: 96px;
+  --section-inner-gap: 48px;
 }
 
 /* ==========================================
@@ -369,7 +388,7 @@ p {
    Shimmer animation (Skeleton component)
    ========================================== */
 
-@keyframes shimmer {
+@keyframes shimmer-skeleton {
   0%   { background-position: -400px 0; }
   100% { background-position: 400px 0; }
 }
@@ -382,6 +401,6 @@ p {
     var(--color-border) 75%
   );
   background-size: 800px 100%;
-  animation: shimmer 1.6s infinite linear;
+  animation: shimmer-skeleton 1.6s infinite linear;
   border-radius: 6px;
 }

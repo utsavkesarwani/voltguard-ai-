@@ -68,7 +68,7 @@ const DetectPage = () => {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative"
+      className="min-h-screen flex flex-col items-center justify-center px-4 py-16 relative"
       style={{ background: 'var(--gradient-hero)' }}
     >
       {/* Grid background */}
@@ -89,7 +89,7 @@ const DetectPage = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8"
+          className="text-center mb-10"
         >
           <div
             className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
@@ -141,7 +141,7 @@ const DetectPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-5"
+            className="mt-6"
           >
             <button
               onClick={handleAnalyze}
@@ -156,7 +156,7 @@ const DetectPage = () => {
           </motion.div>
         )}
 
-        <p className="text-center text-xs mt-4" style={{ color: 'var(--color-text-light)' }}>
+        <p className="text-center text-xs mt-5" style={{ color: 'var(--color-text-light)' }}>
           Your image is processed securely and not stored permanently.
         </p>
       </div>

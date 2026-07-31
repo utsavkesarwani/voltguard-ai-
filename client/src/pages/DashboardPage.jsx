@@ -54,7 +54,7 @@ const DashboardPage = () => {
   const handleFilter = (v) => { setFilterRisk(v); setPage(1); };
 
   return (
-    <div className="min-h-screen py-10 px-4" style={{ background: 'var(--color-bg)' }}>
+    <div className="min-h-screen py-12 px-4" style={{ background: 'var(--color-bg)' }}>
       <div className="max-w-5xl mx-auto">
 
         {/* ── Page Header ─────────────────────────────────────────────────── */}
@@ -62,7 +62,7 @@ const DashboardPage = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8"
+          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10"
         >
           <div>
             <h1 className="mb-1" style={{ color: 'var(--color-heading)' }}>Dashboard</h1>
@@ -77,7 +77,7 @@ const DashboardPage = () => {
         </motion.div>
 
         {/* ── Stat Cards ──────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {statCards.map(({ icon, label, key, color, bgColor, trend, trendUp }, index) => (
             <StatisticCard
               key={label}
@@ -103,7 +103,7 @@ const DashboardPage = () => {
         >
           {/* Table Header */}
           <div
-            className="p-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between"
+            className="px-6 py-5 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between"
             style={{ borderBottom: '1px solid var(--color-border)' }}
           >
             <h3 style={{ color: 'var(--color-heading)' }}>Recent Reports</h3>

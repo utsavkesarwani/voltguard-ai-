@@ -43,7 +43,7 @@ const Footer = () => {
       <div
         style={{
           background: 'var(--gradient-electric)',
-          padding: '48px 0',
+          padding: '56px 0',
         }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -74,7 +74,7 @@ const Footer = () => {
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-14">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-5 w-fit">
@@ -156,7 +156,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div
-          className="mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ borderTop: '1px solid var(--color-border)' }}
         >
           <p className="text-xs" style={{ color: 'var(--color-text-light)' }}>

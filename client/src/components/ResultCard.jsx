@@ -68,11 +68,11 @@ const ResultCard = ({ report }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="card p-7"
+        className="card p-6"
         style={{ borderRadius: '24px' }}
       >
         {/* Confidence + Health Score */}
-        <div className="grid grid-cols-2 gap-4 mb-7">
+        <div className="grid grid-cols-2 gap-4 mb-6">
           <motion.div custom={0} variants={fieldVariants} initial="hidden" animate="visible">
             <p className="text-xs font-medium uppercase tracking-wider mb-1" style={{ color: 'var(--color-text-light)' }}>
               Confidence
@@ -130,7 +130,7 @@ const ResultCard = ({ report }) => {
         {/* Possible Cause */}
         <motion.div
           custom={3} variants={fieldVariants} initial="hidden" animate="visible"
-          className="p-4 rounded-2xl mb-4"
+          className="p-4 rounded-2xl mb-5"
           style={{ background: 'var(--color-bg)', border: '1px solid var(--color-border)' }}
         >
           <div className="flex items-center gap-2 mb-2">
@@ -147,7 +147,7 @@ const ResultCard = ({ report }) => {
         {/* Recommendation */}
         <motion.div
           custom={4} variants={fieldVariants} initial="hidden" animate="visible"
-          className="p-4 rounded-2xl mb-4"
+          className="p-4 rounded-2xl mb-5"
           style={{ background: '#EFF6FF', border: '1px solid rgba(37,99,235,0.15)' }}
         >
           <div className="flex items-center gap-2 mb-2">
@@ -164,7 +164,7 @@ const ResultCard = ({ report }) => {
         {/* Estimated Cost */}
         <motion.div
           custom={5} variants={fieldVariants} initial="hidden" animate="visible"
-          className="p-4 rounded-2xl mb-4"
+          className="p-4 rounded-2xl mb-5"
           style={{ background: '#FFFBEB', border: '1px solid #FDE68A' }}
         >
           <div className="flex items-center gap-2 mb-1">
@@ -184,11 +184,11 @@ const ResultCard = ({ report }) => {
             <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--color-text)' }}>
               Safety Tips
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {report.safetyTips.map((tip, i) => (
-                <li key={i} className="flex items-start gap-2">
+                <li key={i} className="flex items-start gap-2.5">
                   <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#22C55E' }} />
-                  <span className="text-sm" style={{ color: 'var(--color-heading)' }}>{tip}</span>
+                  <span className="text-sm leading-relaxed" style={{ color: 'var(--color-heading)' }}>{tip}</span>
                 </li>
               ))}
             </ul>
