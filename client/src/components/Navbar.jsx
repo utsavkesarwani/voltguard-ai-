@@ -79,13 +79,13 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-4">
               {navLinks.map((link) => (
                 <React.Fragment key={link.label}>
                   {link.href.startsWith('/') ? (
                     <Link
                       to={link.href}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                         location.pathname === link.href
                           ? 'text-blue-600 bg-blue-50'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
@@ -97,7 +97,7 @@ const Navbar = () => {
                     <a
                       href={link.href}
                       onClick={(e) => handleHashLink(e, link.href)}
-                      className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200"
+                      className="block px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200"
                     >
                       {link.label}
                     </a>

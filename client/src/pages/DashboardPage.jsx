@@ -54,7 +54,7 @@ const DashboardPage = () => {
   const handleFilter = (v) => { setFilterRisk(v); setPage(1); };
 
   return (
-    <div className="min-h-screen py-12 px-4" style={{ background: 'var(--color-bg)' }}>
+    <div className="min-h-screen pt-28 pb-12 px-4 lg:pt-32" style={{ background: 'var(--color-bg)' }}>
       <div className="max-w-5xl mx-auto">
 
         {/* ── Page Header ─────────────────────────────────────────────────── */}

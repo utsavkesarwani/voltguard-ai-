@@ -34,7 +34,7 @@ const ResultPage = () => {
   const report = MOCK_REPORT;
 
   return (
-    <div className="min-h-screen py-12 px-4" style={{ background: 'var(--color-bg)' }}>
+    <div className="min-h-screen pt-28 pb-12 px-4 lg:pt-32" style={{ background: 'var(--color-bg)' }}>
       <div className="max-w-2xl mx-auto">
         {/* Back Button */}
         <motion.button
