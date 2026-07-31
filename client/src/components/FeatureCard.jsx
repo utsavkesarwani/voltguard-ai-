@@ -16,7 +16,7 @@ const FeatureCard = ({
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ y: -6, transition: { duration: 0.2 } }}
-      className="card p-6 cursor-default"
+      className="card p-6 cursor-default flex flex-col justify-between"
       style={{ borderRadius: '24px' }}
     >
       {/* Icon */}
